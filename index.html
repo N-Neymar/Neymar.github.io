@@ -1,0 +1,177 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>嘻嘻嘻</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                color: #333;
+                line-height: 1.6;
+                padding: 20px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .container {
+                max-width: 600px;
+                width: 100%;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .header {
+                margin-bottom: 25px;
+            }
+            
+            h1 {
+                color: #2c3e50;
+                font-size: 28px;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            h1:after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 10%;
+                width: 80%;
+                height: 3px;
+                background: linear-gradient(to right, #4CAF50, #2196F3);
+                border-radius: 3px;
+            }
+            
+            .blessing-content {
+                padding: 20px 0;
+            }
+            
+            .blessing-text {
+                font-size: 18px;
+                margin-bottom: 20px;
+                text-align: left;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 10px;
+                border-left: 4px solid #4CAF50;
+            }
+            
+            .quote {
+                font-style: italic;
+                color: #555;
+                margin: 25px 0;
+                padding: 0 10px;
+                font-size: 16px;
+            }
+            
+            .heart {
+                display: inline-block;
+                font-size: 40px;
+                color: #e91e63;
+                animation: heartbeat 1.5s ease-in-out infinite both;
+            }
+            
+            @keyframes heartbeat {
+                from {
+                    transform: scale(1);
+                    transform-origin: center center;
+                    animation-timing-function: ease-out;
+                }
+                10% {
+                    transform: scale(0.91);
+                    animation-timing-function: ease-in;
+                }
+                17% {
+                    transform: scale(0.98);
+                    animation-timing-function: ease-out;
+                }
+                33% {
+                    transform: scale(0.87);
+                    animation-timing-function: ease-in;
+                }
+                45% {
+                    transform: scale(1);
+                    animation-timing-function: ease-out;
+                }
+            }
+            
+            .footer {
+                margin-top: 20px;
+                color: #666;
+                font-size: 14px;
+            }
+            
+            @media (max-width: 480px) {
+                .container {
+                    padding: 20px 15px;
+                }
+                
+                h1 {
+                    font-size: 24px;
+                }
+                
+                .blessing-text {
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>恭喜你成功点进来</h1>
+            </div>
+            
+            <div class="blessing-content">
+                <div class="blessing-text">
+                    <p>亲爱的朋友，</p>
+                    <p>我现在要告诉你一件特别重要的事情 请你一定要睁大你的眼睛把下面的内容看完 务必务必要接着往下面看 不然你就看不到这么重要的消息了 一定一定要往下面继续看下去</p>
+                    <p>好吧 其实你读这句话的时候这几秒就没了 因为我是时间掠夺者 专门发些无聊的东西来浪费你的时间</p>
+                </div>
+                
+                <div class="quote">
+                    不要相信任何人发的东西 除了我发的 嘻嘻嘻   ————  时间掠夺者（Neymar）
+                </div>
+                
+                <div class="animation-area">
+                    <div class="heart">❤️</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script>
+            // 添加页面加载后的简单动画
+            document.addEventListener('DOMContentLoaded', function() {
+                const container = document.querySelector('.container');
+                container.style.opacity = '0';
+                container.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                }, 300);
+            });
+        </script>
+    </body>
+    </html>
+    
