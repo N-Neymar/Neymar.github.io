@@ -1,0 +1,172 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                color: #333;
+                line-height: 1.6;
+                padding: 20px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .container {
+                width: 380px;
+                height: 350px;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: 30px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .header {
+                margin-bottom: 25px;
+            }
+            
+            h1 {
+                color: #2c3e50;
+                font-size: 28px;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            h1:after {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 10%;
+                width: 80%;
+                height: 3px;
+                background: linear-gradient(to right, #4CAF50, #2196F3);
+                border-radius: 3px;
+            }
+            
+            .blessing-content {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+                
+            }
+            
+            .blessing-text {
+                font-size: 18px;
+                margin-bottom: 20px;
+                text-align: center;
+                padding: 15px;
+                background:#f9fafa;
+                border-radius: 10px;
+                
+            }
+            
+            .blessing-text:hover {
+                transform: translateY(-2px);
+            }
+            
+            .heart {
+                display: inline-block;
+                font-size: 50px;
+                color: #e91e63;
+                animation: heartbeat 1.5s ease-in-out infinite both;
+            }
+            
+            @keyframes heartbeat {
+                from {
+                    transform: scale(1);
+                    transform-origin: center center;
+                    animation-timing-function: ease-out;
+                }
+                10% {
+                    transform: scale(0.91);
+                    animation-timing-function: ease-in;
+                }
+                17% {
+                    transform: scale(0.98);
+                    animation-timing-function: ease-out;
+                }
+                33% {
+                    transform: scale(0.87);
+                    animation-timing-function: ease-in;
+                }
+                45% {
+                    transform: scale(1);
+                    animation-timing-function: ease-out;
+                }
+            }
+            
+            .footer {
+                margin-top: 20px;
+                color: #666;
+                font-size: 14px;
+            }
+            
+            @media (max-width: 480px) {
+                .container {
+                    padding: 20px 15px;
+                }
+                
+                h1 {
+                    font-size: 24px;
+                }
+                
+                .blessing-text {
+                    font-size: 16px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>准备好开始游戏了嘛</h1>
+            </div>
+            
+            <div class="blessing-content">
+                <div class="blessing-text">
+                    <a href="index1.html" style="color: #2196F3; cursor: pointer;text-decoration: none;">
+                        点击此处开始游戏
+                    </a>
+                </div>
+                
+                <div class="animation-area">
+                    <div class="heart">❤️</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script>
+            // 添加页面加载后的简单动画
+            document.addEventListener('DOMContentLoaded', function() {
+                const container = document.querySelector('.container');
+                container.style.opacity = '0';
+                container.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    container.style.opacity = '1';
+                    container.style.transform = 'translateY(0)';
+                }, 300);
+            });
+        </script>
+    </body>
+    </html>
+    
